@@ -10,11 +10,11 @@ spl_autoload_register( function($classname) {
 } );
 
 
-add_action( 'add_meta_boxes', 'myplugin_add_meta_box' );
-function myplugin_add_meta_box() {
-    add_meta_box('myplugin_sectionid', 'Testing', 'myplugin_meta_box_callback', 'radio' );
+add_action( 'add_meta_boxes', 'zenplugin_add_meta_box' );
+function zenplugin_add_meta_box() {
+    add_meta_box('zenplugin_sectionid', 'Testing', 'zenplugin_meta_box_callback', 'radio' );
 }
-function myplugin_meta_box_callback ( $post ) {
+function zenplugin_meta_box_callback ( $post ) {
     echo 'stream: ' . get_post_meta( $post->ID, 'stream', true ) . '<br/>';
     echo 'stream_type: ' . get_post_meta( $post->ID, 'streamtype', true ) . '<br/>';
     echo 'source: ' . get_post_meta( $post->ID, 'city_url', true ) . '<br/>';
